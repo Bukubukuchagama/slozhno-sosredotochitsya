@@ -17,6 +17,7 @@
 
 .header {
   position: relative;
+  block-size: 100%;
   padding: var(--header-padding);
 }
 
@@ -438,11 +439,6 @@
     object-position: center;
     inline-size: 100%;
     block-size: 100%;
-  }
-
-  .section:last-of-type {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px 19px;
   }
 
   .section:last-of-type {
