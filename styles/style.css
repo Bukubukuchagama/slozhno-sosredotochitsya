@@ -384,25 +384,13 @@
     inline-size: 65%;
   }
 
-  .section:nth-of-type(2) .section__article-list {
-    gap: 20px;
-  }
-
-  .section:nth-of-type(2) .section__article-item {
-    flex: 1 0 auto;
-    inline-size: 100%;
-  }
-
   .footer__title {
     text-shadow: 2px 2px 0px var(--title-decor);
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
   .footer {
     padding: 434px 20px;
-  }
-
-  .footer__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }
 
