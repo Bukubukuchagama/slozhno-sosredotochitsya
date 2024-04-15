@@ -4,11 +4,11 @@
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   /* dark page */
   color: var(--main-color-text);
-  font-family: var(--font, Arial, sans-serif);
+  font-family: var(--font, Courier, monospace);
   background-color: var(--background-color);
   background-image: var(--background-image);
-  background-size: auto 768px;
-  background-position: top;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -60,6 +60,7 @@
   font-size: var(--text-size);
   font-weight: var(--text-weight-less);
   color: var(--corners-color);
+  text-transform: lowercase;
   line-height: 18px;
   padding: 2.5px 12px;
   border: transparent;
@@ -284,92 +285,93 @@
 
 /* _________@media_________ */
 
-/* header */
+/* (width >= 1024px) */
 
-@media (width < 768px) and (width >= 375px) {
+@media (width >= 1024px) {
+  .section:nth-of-type(2) .section__article-list {
+    justify-content: space-between;
+  }
+}
+
+@media (width >= 768px) {
+  .section:last-of-type .section__image {
+    object-fit: cover;
+    object-position: center;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  .section:last-of-type {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 19px;
+  }
+}
+
+/* (width <= 768px) */
+
+@media (width <= 768px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    padding-inline-end: 11px;
+  }
+
   .header {
     padding: 0 10px;
   }
 
   .rec {
-    inset-block-start: 11px;
-    inset-inline-end: 39px;
+    inset-block-start: 20px;
+    inset-inline-end: 48px;
   }
 
-  .header__theme-menu-list {
-    gap: 11px;
-  }
-
-  .header__theme-menu {
-    padding-block-start: 75px;
-  }
-
-  .header__title-top {
-    padding: 66px 0 74px;
-    gap: 53px;
-  }
-
-  .header__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin-inline-start: 0;
-    line-height: 82.5%;
+  .header__title-description {
+    inline-size: 48.5%;
+    margin-inline-end: 10px;
   }
 
   .decorated-zone::before {
-    inset-inline-start: 10px;
-    inset-block-end: 17px;
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
   }
 
   .decorated-zone::after {
-    inset-inline-end: 10px;
-    inset-block-start: 10px;
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
   }
-}
 
-@media (width < 1024px) {
-  .header__theme-menu-list {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 14.5px;
-  }
-}
-
-@media (width < 1024px) and (width >= 768px) {
   .header__theme-menu {
     padding-top: 190px;
   }
 
   .header__title-top {
     padding: 145px 0 183px;
-    gap: 132px;
+    gap: 133px;
   }
 
   .header__title {
-    margin-inline-start: -2.7%;
-  }
-}
-
-@media (width < 1024px) and (width >= 375px) {
-  .header__title {
+    margin-inline-start: -1.4%;
+    margin-block-start: -0.2%;
     text-shadow: 4px 4px 0px var(--title-decor);
   }
-}
 
-@media (width < 425px) {
-  .header__title-description {
+  .section:nth-of-type(2) .section__article-list {
+    gap: 20px;
+  }
+
+  .section:nth-of-type(2) .section__article-item {
+    flex: 1 0 auto;
     inline-size: 100%;
   }
-}
 
-/* main */
-
-@media (width < 1024px) and (width >= 768px) {
   .main {
     gap: 82px;
   }
 
   .section__title {
-    inline-size: 35%;
+    inline-size: 100%;
+    margin-block-end: 20px;
   }
 
   .section:first-of-type .section__title,
@@ -381,13 +383,93 @@
   .section:nth-of-type(3) .section__article-list {
     inline-size: 65%;
   }
+
+  .section:nth-of-type(2) .section__article-list {
+    gap: 20px;
+  }
+
+  .section:nth-of-type(2) .section__article-item {
+    flex: 1 0 auto;
+    inline-size: 100%;
+  }
+
+  .footer__title {
+    text-shadow: 2px 2px 0px var(--title-decor);
+  }
+
+  .footer {
+    padding: 434px 20px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
 }
 
-@media (width < 768px) and (width >= 375px) {
+@media (width < 768px) {
+  .section:last-of-type .section__image {
+    inline-size: 100%;
+    block-size: auto;
+  }
+
+  .section:last-of-type .section__image-container {
+    inline-size: 100px;
+  }
+
+  .section:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* width <= 375px */
+
+@media (width <= 376px) {
+  .rec {
+    inset-block-start: 8px;
+    inset-inline-end: 38px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-start: 10px;
+    inset-block-end: 17px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-end: 10px;
+    inset-block-start: 9px;
+  }
+
+  .header__title-top {
+    padding: 69px 0 73px;
+    gap: 54.5px;
+  }
+
+  .header__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-inline-start: 0;
+    line-height: 82.5%;
+  }
+
+  .header__title-description {
+    inline-size: 100%;
+    margin-inline-end: 0px;
+  }
+
+  .header__theme-menu {
+    padding-top: 75px;
+  }
+
+  .header__theme-menu-list {
+    padding-inline-end: 1.4px;
+    gap: 12.7px;
+  }
+
   .main {
     padding: 0 10px;
     margin: 34px 0;
-    gap: 50px;
+    gap: 51px;
   }
 
   .section__title {
@@ -414,77 +496,13 @@
     inline-size: 100%;
     margin: 1px;
   }
-}
 
-@media (width >= 1024px) {
-  .section:nth-of-type(2) .section__article-list {
-    justify-content: space-between;
-  }
-}
-
-@media (width < 1024px) and (width >= 375px) {
-  .section:nth-of-type(2) .section__article-list {
-    gap: 20px;
-  }
-
-  .section:nth-of-type(2) .section__article-item {
-    flex: 1 0 auto;
-    inline-size: 100%;
-  }
-}
-
-@media (width >= 768px) {
-  .section:last-of-type .section__image {
-    object-fit: cover;
-    object-position: center;
-    inline-size: 100%;
-    block-size: 100%;
-  }
-
-  .section:last-of-type {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px 19px;
-  }
-}
-
-@media (width < 768px) {
-  .section:last-of-type .section__image {
-    inline-size: 100%;
-    block-size: auto;
-  }
-
-  .section:last-of-type .section__image-container {
-    inline-size: 100px;
-  }
-
-  .section:last-of-type {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* footer */
-
-@media (width < 1024px) and (width >= 375px) {
   .footer__title {
     text-shadow: 2px 2px 0px var(--title-decor);
   }
-}
 
-@media (width < 768px) and (width >= 375px) {
   .footer {
     margin-block-start: 40px;
-    padding: 262px 10px;
-  }
-
-  .footer__title {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  }
-}
-
-@media (width < 1024px) and (width >= 768px) {
-  .footer {
-    padding: 434px 20px;
+    padding: 258px 10px;
   }
 }
