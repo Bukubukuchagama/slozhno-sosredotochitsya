@@ -285,8 +285,6 @@
 
 /* _________@media_________ */
 
-/* (width >= 1024px) */
-
 @media (width >= 1024px) {
   .section:nth-of-type(2) .section__article-list {
     justify-content: space-between;
@@ -304,6 +302,17 @@
   .section:last-of-type {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 19px;
+  }
+}
+
+@media (width < 1024px) {
+  .section:nth-of-type(2) .section__article-list {
+    gap: 20px;
+  }
+
+  .section:nth-of-type(2) .section__article-item {
+    flex: 1 0 auto;
+    inline-size: 100%;
   }
 }
 
@@ -356,15 +365,6 @@
     text-shadow: 4px 4px 0px var(--title-decor);
   }
 
-  .section:nth-of-type(2) .section__article-list {
-    gap: 20px;
-  }
-
-  .section:nth-of-type(2) .section__article-item {
-    flex: 1 0 auto;
-    inline-size: 100%;
-  }
-
   .main {
     gap: 82px;
   }
@@ -411,24 +411,7 @@
   }
 }
 
-/* width <= 375px */
-
-@media (width <= 376px) {
-  .rec {
-    inset-block-start: 8px;
-    inset-inline-end: 38px;
-  }
-
-  .decorated-zone::before {
-    inset-inline-start: 10px;
-    inset-block-end: 17px;
-  }
-
-  .decorated-zone::after {
-    inset-inline-end: 10px;
-    inset-block-start: 9px;
-  }
-
+@media (width < 589px) {
   .header__title-top {
     padding: 69px 0 73px;
     gap: 54.5px;
@@ -440,29 +423,10 @@
     line-height: 82.5%;
   }
 
-  .header__title-description {
-    inline-size: 100%;
-    margin-inline-end: 0px;
-  }
-
-  .header__theme-menu {
-    padding-top: 75px;
-  }
-
-  .header__theme-menu-list {
-    padding-inline-end: 1.4px;
-    gap: 12.7px;
-  }
-
   .main {
     padding: 0 10px;
     margin: 34px 0;
     gap: 51px;
-  }
-
-  .section__title {
-    inline-size: 100%;
-    margin-block-end: 20px;
   }
 
   .section:first-of-type .section__title,
@@ -483,6 +447,39 @@
   .section:last-of-type .section__title {
     inline-size: 100%;
     margin: 1px;
+  }
+}
+
+/* width <= 375px */
+
+@media (width <= 376px) {
+  .rec {
+    inset-block-start: 8px;
+    inset-inline-end: 38px;
+  }
+
+  .decorated-zone::before {
+    inset-inline-start: 10px;
+    inset-block-end: 17px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-end: 10px;
+    inset-block-start: 9px;
+  }
+
+  .header__title-description {
+    inline-size: 100%;
+    margin-inline-end: 0px;
+  }
+
+  .header__theme-menu {
+    padding-top: 75px;
+  }
+
+  .header__theme-menu-list {
+    padding-inline-end: 1.4px;
+    gap: 12.7px;
   }
 
   .footer__title {
