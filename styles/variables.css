@@ -6,6 +6,7 @@
 :root {
   --main-color-text: #f1b2ce;
   --font: "IBM Plex mono";
+  --transition-duration: 0.5s;
   --background-color: #000028;
   --background-image: url(../images/cover-image-dark.png);
   --header-padding: 0 20px;

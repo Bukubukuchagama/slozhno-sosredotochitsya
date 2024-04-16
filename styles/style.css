@@ -11,13 +11,14 @@
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  transition-duration: var(--duration);
 }
 
 /* header */
 
 .header {
   position: relative;
-  block-size: 100%;
+  block-size: 100vh;
   padding: var(--header-padding);
 }
 
@@ -67,6 +68,7 @@
   background: none;
   cursor: pointer;
   text-align: center;
+  transition-duration: var(--duration);
 }
 
 .header__theme-menu-button:hover {
@@ -75,10 +77,12 @@
 
 .header__theme-menu-button:focus {
   border: none;
+  border-block-end: 1px solid var(--corners-color);
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--corners-color);
+  outline: none;
+  border: 1px solid var(--corners-color);
 }
 
 .header__theme-menu-button_active {
@@ -89,7 +93,7 @@
 .header__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: var(--text-weight-more);
-  margin-left: -2%;
+  margin-inline-start: -2%;
   color: var(--main-color);
   text-shadow: 4px 4px 0px var(--accent-color);
   text-align: left;
@@ -203,7 +207,9 @@
 
 .section__article-text-link {
   border: transparent;
-  text-shadow: 3px 3px 0px var(--link-shadow);
+  text-decoration: none;
+  text-shadow: 1.5px 1.5px 0px var(--link-shadow);
+  transition-duration: var(--duration);
 }
 
 .section__article-text-link:hover {
@@ -211,7 +217,7 @@
 }
 
 .section__article-text-link:focus {
-  outline: none;
+  outline: 1px solid var(--main-color-text);
 }
 
 .section__article-text-link:focus-visible {
@@ -271,6 +277,7 @@
 /* footer */
 
 .footer {
+  block-size: 100vh;
   padding: 282px 20px;
   position: relative;
   text-align: center;
@@ -287,7 +294,13 @@
 
 @media (width >= 1024px) {
   .section:nth-of-type(2) .section__article-list {
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 19.5px;
+  }
+
+  .section:nth-of-type(2) .section__article-item {
+    inline-size: 100%;
   }
 }
 
@@ -351,7 +364,7 @@
   }
 
   .header__theme-menu {
-    padding-top: 190px;
+    padding-block-start: 190px;
   }
 
   .header__title-top {
@@ -425,7 +438,7 @@
 
   .main {
     padding: 0 10px;
-    margin: 34px 0;
+    margin: 40px 0;
     gap: 51px;
   }
 
@@ -474,7 +487,7 @@
   }
 
   .header__theme-menu {
-    padding-top: 75px;
+    padding-block-start: 75px;
   }
 
   .header__theme-menu-list {
