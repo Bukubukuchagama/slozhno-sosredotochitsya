@@ -14,7 +14,7 @@
   --transition-duration: 0.5s;
   --background-color: #fff1f7;
   --background-image: url(../images/cover-image-light.png);
-  --header-padding: 0 20px;
+  --header-padding: 20px;
   --rec-color: var(--background-color);
   --rec-decor-top: 11px;
   --rec-decor-right: 39px;
@@ -39,7 +39,7 @@
     --transition-duration: 0.5s;
     --background-color: #fff1f7;
     --background-image: url(../images/cover-image-light.png);
-    --header-padding: 0 20px;
+    --header-padding: 20px;
     --rec-color: var(--background-color);
     --rec-decor-top: 11px;
     --rec-decor-right: 39px;
